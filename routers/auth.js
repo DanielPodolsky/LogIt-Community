@@ -5,13 +5,13 @@ import User from "../models/user.js";
 import sendEmail from "../utils/sendEmail.js";
 import purify from "../utils/sanitize.js";
 import { userAuthentication, userLogin } from "../validation/auth.js";
-import { generateToken } from "../utils/token.js";
+import { generateToken, verifyToken } from "../utils/token.js";
 const router = Router();
 
 // Routes
 
 // Register a new user
-// POST /api/users/register
+// POST /api/auth/register
 router.post("/register", async (req, res) => {
   // 1. Sanitize values
   Object.keys(req.body).forEach((key) => {
@@ -67,7 +67,7 @@ router.post("/register", async (req, res) => {
 });
 
 // Login
-// POST /api/users/login
+// POST /api/auth/login
 router.post("/login", async (req, res) => {
   // 1. Sanitize values
   Object.keys(req.body).forEach((key) => {
@@ -114,8 +114,8 @@ router.post("/login", async (req, res) => {
 });
 
 // Reset Password
-// POST /api/users/forgot-password
-router.post("/forgot-password", async (req, res) => {
+// POST /api/auth/forgot-password
+router.post("/forgot-password", [verifyToken], async (req, res) => {
   const { email } = req.body;
   try {
     const user = await User.findOne({ email: email });
@@ -152,7 +152,7 @@ router.post("/forgot-password", async (req, res) => {
   }
 });
 
-router.post("/forgot-password/:token", async (req, res) => {
+router.post("/forgot-password/:token", [verifyToken], async (req, res) => {
   const { token } = req.params;
   const { password } = req.body;
 
