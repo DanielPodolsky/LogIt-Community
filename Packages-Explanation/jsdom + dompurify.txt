@@ -1,0 +1,2 @@
+JSDOM is a JavaScript implementation of web standards that simulates a browser environment in Node.js. It provides a virtual DOM (Document Object Model) outside of a browser, allowing you to parse, manipulate, and interact with HTML just as you would in a browser environment.
+DOMPurify is a DOM-based HTML sanitizer that helps protect your application from cross-site scripting (XSS) attacks. It removes dangerous elements and attributes from HTML, ensuring only safe content is rendered.

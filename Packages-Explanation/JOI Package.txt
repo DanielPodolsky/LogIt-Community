@@ -1,0 +1,8 @@
+Joi is a powerful schema validation library for JavaScript, primarily used in Node.js applications. Created as part of the hapi ecosystem, Joi allows developers to build schemas with a clear, chainable API to validate JavaScript objects against predefined rules.
+Key features of Joi include:
+
+Rich type validation for strings, numbers, dates, arrays, and objects
+Customizable error messages
+Complex validation rules including conditional validation
+Support for custom validation functions
+Ability to transform and convert data during validation

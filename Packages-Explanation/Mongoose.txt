@@ -1,0 +1,9 @@
+Mongoose is a popular Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a straightforward, schema-based solution to model application data and includes built-in type casting, validation, query building, and business logic hooks.
+Key features of Mongoose include:
+
+Schema definition with strong typing and validation rules
+Middleware (pre/post hooks) for processing documents
+Model-based operations for creating, reading, updating, and deleting documents
+Population for referencing documents across collections
+Virtuals for computed document properties that aren't stored in MongoDB
+Query building with chainable methods
